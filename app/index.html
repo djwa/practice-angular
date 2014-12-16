@@ -19,14 +19,16 @@
         <script src="js/services.js"></script>
     </head>
     <body>
-
-        <div class="view-container wrapper">
-            <ul class="nav nav-tabs" ng-controller="menuController">
-                <li role="presentation" ng-class="{{ actice: isActive('/')}}"><a href="#/">Home</a></li>
-                <li role="presentation" ng-class="{{ actice: isActive('/phones')}}"><a href="#/phones">Our Phones</a></li>
-            </ul>
-            <div ng-view class="view-frame"></div>
+        <div class="wrapper">
+            <div class="view-container">
+                <div class="tab-pane">
+                    <ul class="nav nav-tabs" ng-controller="menuController">
+                        <li role="presentation" ng-class="{ active: isActive('/')}" class="active"><a href="#/">Home</a></li>
+                        <li role="presentation" ng-class="{ active: isActive('/phones')}"><a href="#/phones">Our Phones</a></li>
+                    </ul>
+                </div>
+                <div ng-view class="view-frame"></div>
+            </div>
         </div>
-
     </body>
 </html>

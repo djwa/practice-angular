@@ -18,13 +18,13 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
-    }
+    };
   }]);
   
-  menuController.controller('menuController', ['$scope', '$location',
+  phonecatControllers.controller('menuController', ['$scope', '$location',
         function($scope, $location){
             $scope.isActive = function(viewLocation){
-                return viewLocation = $location.path;
+                return viewLocation === $location.path();
             };
         }
   ]);
