@@ -20,3 +20,11 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
       $scope.mainImageUrl = imageUrl;
     }
   }]);
+  
+  menuController.controller('menuController', ['$scope', '$location',
+        function($scope, $location){
+            $scope.isActive = function(viewLocation){
+                return viewLocation = $location.path;
+            };
+        }
+  ]);
