@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Google Phone Gallery</title>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/animations.css">
 
@@ -20,13 +20,13 @@
     </head>
     <body>
         <div class="wrapper">
+            <div class="tab-pane">
+                <ul class="nav nav-tabs" ng-controller="menuController">
+                    <li role="presentation" ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+                    <li role="presentation" ng-class="{ active: isActive('/phones')}"><a href="#/phones">Our Phones</a></li>
+                </ul>
+            </div>
             <div class="view-container">
-                <div class="tab-pane">
-                    <ul class="nav nav-tabs" ng-controller="menuController">
-                        <li role="presentation" ng-class="{ active: isActive('/')}" class="active"><a href="#/">Home</a></li>
-                        <li role="presentation" ng-class="{ active: isActive('/phones')}"><a href="#/phones">Our Phones</a></li>
-                    </ul>
-                </div>
                 <div ng-view class="view-frame"></div>
             </div>
         </div>
